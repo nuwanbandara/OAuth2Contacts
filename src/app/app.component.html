@@ -1,0 +1,48 @@
+<h1>Oauth2 Contact Access</h1>
+<div>
+  <button class="btn btn-primary" (click)="loadAllContacts()">Access Contacts</button>
+</div>
+<hr>
+<ul>
+  <li *ngFor="let contact of contactList">{{contact.name}} - {{contact.number}}</li>
+</ul>
+
+<section>
+  <h3>What is OAuth2 Contact Access?</h3>
+  <p>
+    A simple attempt to demonstrate OAuth2 usage with People API.
+    <b>This application is only capable of demonstrate how to access peoples contacts when user authorizes.</b>
+    It has been developed using Angular.
+  </p>
+</section>
+
+<section>
+  <h3>Where is the source code?</h3>
+  <p>
+    You can find the source <a href="https://github.com/nuwanbandara/OAuth2Contacts">here</a> @ GitHub.
+  </p>
+</section>
+
+<section>
+  <h3>How does this work?</h3>
+  <p>
+    We use what known as <b>Delegated Authorization</b> to access user's contact list assuming user grant permissions or
+    his or her Gmail Account grant permissions to do so as user trust google.
+  </p>
+  <p>
+    We send a HTTP request to Google Authorization server with few meta data. Which includes three important
+    things. <b>Redirect URI</b>, <b>Response Type</b>, <b>Scope</b>. In OAuth2 Implicit Flow Grant Type Response Type
+    should be set to <b>Token</b>. This means if user consents to access his or her Google account,
+    we ask to send us an access token which we can later use to access the Resource Server. Because in order to deal with resource server
+    we are going to need an access token.
+  </p>
+</section>
+
+<section>
+  <h3>Further Reading.</h3>
+  <a href="https://developers.google.com/identity/choose-auth">Google Identity Platform</a>
+  <br>
+  <a href="https://aaronparecki.com/oauth-2-simplified/">OAuth 2 Simplified</a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=996OiexHze0">OAuth2 and OpenID Connect in Plain English</a>
+</section>
